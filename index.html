@@ -23,6 +23,125 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .skills-wrap {
+        margin-top: 22px;
+      }
+
+      .skills-category {
+        margin-bottom: 26px;
+        text-align: center;
+        padding: 14px 12px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.035);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .skills-category-title {
+        margin: 0 0 14px 0;
+        font-size: 14px;
+        font-weight: 900;
+        letter-spacing: 0.08rem;
+        text-transform: uppercase;
+        color: #fff;
+        text-align: center;
+        position: relative;
+      }
+
+      .skills-category-title::after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 84px;
+        margin: 10px auto 0;
+        border-radius: 99px;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 212, 255, 0.9),
+          rgba(124, 58, 237, 0.9),
+          rgba(34, 197, 94, 0.9)
+        );
+        background-size: 200% 100%;
+        animation: skillsLine 2.8s ease-in-out infinite;
+        opacity: 0.85;
+      }
+
+      .skills-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .skill-pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.15s ease, border-color 0.15s ease,
+          background-color 0.15s ease, box-shadow 0.15s ease;
+      }
+
+      .skill-pill:hover {
+        transform: translateY(-1px);
+        border-color: rgba(255, 255, 255, 0.4);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+      }
+
+      .skill-pill::before {
+        content: "";
+        position: absolute;
+        top: -60%;
+        left: -30%;
+        width: 60%;
+        height: 220%;
+        background: linear-gradient(
+          110deg,
+          rgba(255, 255, 255, 0) 30%,
+          rgba(255, 255, 255, 0.55) 50%,
+          rgba(255, 255, 255, 0) 70%
+        );
+        opacity: 0;
+        transform: translateX(-120%);
+        pointer-events: none;
+      }
+
+      .skill-pill:hover::before {
+        opacity: 1;
+        animation: pillShine 0.65s ease forwards;
+      }
+
+      @keyframes pillShine {
+        from {
+          transform: translateX(-120%);
+        }
+        to {
+          transform: translateX(220%);
+        }
+      }
+
+      @keyframes skillsLine {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
     <script src="script.js"></script>
     <script
       type="text/javascript"
@@ -88,8 +207,7 @@
               </div>
               <div class="site-logo pos-absolute">
                 <a href="index.html" class="unslate_co--site-logo"
-                  >My Portfolio<span>.</span></a
-                >
+                  >My Portfolio<span>.</span></a>
               </div>
               <div class="col-md-5 text-right text-lg-left">
                 <ul
@@ -98,8 +216,7 @@
                   <li><a href="#skills-section" class="nav-link">Skills</a></li>
                   <li>
                     <a href="#testimonial-section" class="nav-link"
-                      >Experience</a
-                    >
+                      >Experience</a>
                   </li>
                   <li>
                     <a href="#journal-section" class="nav-link">Projects</a>
@@ -196,9 +313,211 @@
                     href="RESUME.ABHISHEK.pdf"
                     class="btn btn-outline-pill btn-custom-light"
                     download="RESUME.ABHISHEK.pdf"
-                    >Download my RESUME</a
-                  >
+                    >Download my RESUME</a>
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="unslate_co--section" id="testimonial-section">
+          <div class="container">
+            <div class="section-heading-wrap text-center mb-5">
+              <h2 class="heading-h2 text-center divider">
+                <span class="gsap-reveal">Professional Experience</span>
+              </h2>
+              <span class="gsap-reveal"
+                ><img src="images/divider.png" alt="divider" width="76"
+              /></span>
+            </div>
+          </div>
+
+          <div class="owl-carousel testimonial-slider" data-aos="fade-up">
+            <div>
+              <div class="testimonial-v1">
+                <div class="testimonial-inner-bg">
+                  <h1>Experience</h1>
+                  <blockquote>
+                    Full Stack Developer at Automax Solutions India Pvt Ltd,
+                    Kochi (Jan 2025 – Present). Built production features using
+                    Next.js (frontend) and NestJS/Node.js (backend). Developed
+                    REST and GraphQL APIs integrating WhatsApp Cloud API,
+                    Firebase FCM, and AWS S3 / Google Cloud Storage. Implemented
+                    JWT + cookie-based sessions, Cloudflare Turnstile, and
+                    Redis-backed rate limiting, along with BullMQ background
+                    jobs for bulk messaging and scheduled tasks. Integrated third-party
+                    APIs using Axios with retries and added observability
+                    with Winston and Sentry, plus file/document processing
+                    pipelines using Multer, Sharp, XLSX, PDF, PPTX, and ZIP.
+                  </blockquote>
+                </div>
+
+                <div class="testimonial-author-info">
+                  <img src="images/auto.jpg" alt="Image" />
+                  <h3>Automax Solutions India Pvt Ltd</h3>
+                  <span class="d-block position">Kochi, India</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="testimonial-v1">
+                <div class="testimonial-inner-bg">
+                  <h1>Experience</h1>
+                  <blockquote>
+                    Full Stack Developer at Automax Solutions India Pvt Ltd,
+                    Kochi (Jan 2025 – Present). Built production features using
+                    Next.js (frontend) and NestJS/Node.js (backend). Developed
+                    REST and GraphQL APIs integrating WhatsApp Cloud API,
+                    Firebase FCM, and AWS S3 / Google Cloud Storage. Implemented
+                    JWT + cookie-based sessions, Cloudflare Turnstile, and
+                    Redis-backed rate limiting, along with BullMQ background
+                    jobs for bulk messaging and scheduled tasks. Integrated third-party
+                    APIs using Axios with retries and added observability
+                    with Winston and Sentry, plus file/document processing
+                    pipelines using Multer, Sharp, XLSX, PDF, PPTX, and ZIP.
+                  </blockquote>
+                </div>
+
+                <div class="testimonial-author-info">
+                  <img src="images/auto.jpg" alt="Image" />
+                  <h3>Automax Solutions India Pvt Ltd</h3>
+                  <span class="d-block position">Kochi, India</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="testimonial-v1">
+                <div class="testimonial-inner-bg">
+                  <h1>Experience</h1>
+                  <blockquote>
+                    Full Stack Developer at Automax Solutions India Pvt Ltd,
+                    Kochi (Jan 2025 – Present). Built production features using
+                    Next.js (frontend) and NestJS/Node.js (backend). Developed
+                    REST and GraphQL APIs integrating WhatsApp Cloud API,
+                    Firebase FCM, and AWS S3 / Google Cloud Storage. Implemented
+                    JWT + cookie-based sessions, Cloudflare Turnstile, and
+                    Redis-backed rate limiting, along with BullMQ background
+                    jobs for bulk messaging and scheduled tasks. Integrated third-party
+                    APIs using Axios with retries and added observability
+                    with Winston and Sentry, plus file/document processing
+                    pipelines using Multer, Sharp, XLSX, PDF, PPTX, and ZIP.
+                  </blockquote>
+                </div>
+
+                <div class="testimonial-author-info">
+                  <img src="images/auto.jpg" alt="Image" />
+                  <h3>Automax Solutions India Pvt Ltd</h3>
+                  <span class="d-block position">Kochi, India</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="unslate_co--section" id="skills-section">
+          <div class="container">
+            <div class="section-heading-wrap text-center mb-5">
+              <h2 class="heading-h2 text-center divider">
+                <span class="gsap-reveal">My Skills</span>
+              </h2>
+              <span class="gsap-reveal"
+                ><img src="images/divider.png" alt="divider" width="76"
+              /></span>
+            </div>
+            <div class="skills-wrap">
+              <div class="row">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="0">
+                  <div class="skills-category" data-aos="fade-up" data-aos-delay="0">
+                    <h3 class="skills-category-title">Frontend</h3>
+                    <div class="skills-pills">
+                      <span class="skill-pill">React.js</span>
+                      <span class="skill-pill">Next.js</span>
+                      <span class="skill-pill">Vite</span>
+                    </div>
+                  </div>
+
+                  <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="skills-category-title">Backend</h3>
+                    <div class="skills-pills">
+                      <span class="skill-pill">Node.js</span>
+                      <span class="skill-pill">NestJS</span>
+                      <span class="skill-pill">Express.js</span>
+                    </div>
+                  </div>
+
+                  <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="skills-category-title">API & Architecture</h3>
+                    <div class="skills-pills">
+                      <span class="skill-pill">REST</span>
+                      <span class="skill-pill">GraphQL (Apollo)</span>
+                      <span class="skill-pill">Swagger / OpenAPI</span>
+                      <span class="skill-pill">Clean Architecture</span>
+                    </div>
+                  </div>
+
+                  <div class="skills-category" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="skills-category-title">State Management</h3>
+                    <div class="skills-pills">
+                      <span class="skill-pill">Redux Toolkit</span>
+                      <span class="skill-pill">Zustand</span>
+                      <span class="skill-pill">Context API</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+                  <div class="skills-category" data-aos="fade-up" data-aos-delay="0">
+                    <h3 class="skills-category-title">Databases & Caching</h3>
+                    <div class="skills-pills">
+                      <span class="skill-pill">PostgreSQL</span>
+                      <span class="skill-pill">MongoDB</span>
+                      <span class="skill-pill">MySQL</span>
+                      <span class="skill-pill">Redis</span>
+                      <span class="skill-pill">Prisma ORM</span>
+                      <span class="skill-pill">Mongoose</span>
+                    </div>
+                  </div>
+
+                  <div class="skills-category" data-aos="fade-up" data-aos-delay="120">
+                    <h3 class="skills-category-title">Auth & Payments</h3>
+                    <div class="skills-pills">
+                      <span class="skill-pill">JWT</span>
+                      <span class="skill-pill">OAuth 2.0</span>
+                      <span class="skill-pill">Passport</span>
+                      <span class="skill-pill">bcrypt</span>
+                      <span class="skill-pill">Stripe</span>
+                      <span class="skill-pill">PayPal</span>
+                      <span class="skill-pill">Razorpay</span>
+                    </div>
+                  </div>
+
+                  <div class="skills-category" data-aos="fade-up" data-aos-delay="240">
+                    <h3 class="skills-category-title">Real-time</h3>
+                    <div class="skills-pills">
+                      <span class="skill-pill">WebSockets</span>
+                      <span class="skill-pill">Socket.IO</span>
+                      <span class="skill-pill">WebRTC</span>
+                      <span class="skill-pill">GraphQL subscriptions</span>
+                    </div>
+                  </div>
+
+                  <div class="skills-category" data-aos="fade-up" data-aos-delay="360">
+                    <h3 class="skills-category-title">
+                      Jobs & DevOps
+                    </h3>
+                    <div class="skills-pills">
+                      <span class="skill-pill">BullMQ</span>
+                      <span class="skill-pill">Cron / @nestjs/schedule</span>
+                      <span class="skill-pill">Docker</span>
+                      <span class="skill-pill">AWS (EC2, S3)</span>
+                      <span class="skill-pill">Nginx</span>
+                      <span class="skill-pill">Git</span>
+                      <span class="skill-pill">Postman</span>
+                      <span class="skill-pill">Jest</span>
+                      <span class="skill-pill">ESLint</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -502,169 +821,6 @@
           </div>
         </div>
 
-        <div class="unslate_co--section section-counter" id="skills-section">
-          <div class="container">
-            <div class="section-heading-wrap text-center mb-5">
-              <h2 class="heading-h2 text-center divider">
-                <span class="gsap-reveal">My Skills</span>
-              </h2>
-              <span class="gsap-reveal"
-                ><img src="images/divider.png" alt="divider" width="76"
-              /></span>
-            </div>
-
-            <div class="row pt-5">
-              <div
-                class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3"
-                data-aos="fade-up"
-                data-aos-delay="0"
-              >
-                <div class="counter-v1 text-center">
-                  <span class="number-wrap">
-                    <span class="number number-counter" data-number="97"
-                      >0</span
-                    >
-                    <span class="append-text">%</span>
-                  </span>
-                  <span class="counter-label">MongoDB</span>
-                </div>
-              </div>
-              <div
-                class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                <div class="counter-v1 text-center">
-                  <span class="number-wrap">
-                    <span class="number number-counter" data-number="96"
-                      >0</span
-                    >
-                    <span class="append-text">%</span>
-                  </span>
-                  <span class="counter-label">ReactJS</span>
-                </div>
-              </div>
-              <div
-                class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <div class="counter-v1 text-center">
-                  <span class="number-wrap">
-                    <span class="number number-counter" data-number="95"
-                      >0</span
-                    >
-                    <span class="append-text">%</span>
-                  </span>
-                  <span class="counter-label">Rest API </span>
-                </div>
-              </div>
-              <div
-                class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <div class="counter-v1 text-center">
-                  <span class="number-wrap">
-                    <span class="number number-counter" data-number="98"
-                      >0</span
-                    >
-                    <span class="append-text">%</span>
-                  </span>
-                  <span class="counter-label">UI & UX</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- END .counter -->
-
-        <div class="unslate_co--section" id="testimonial-section">
-          <div class="container">
-            <div class="section-heading-wrap text-center mb-5">
-              <h2 class="heading-h2 text-center divider">
-                <span class="gsap-reveal">Professional Experience</span>
-              </h2>
-              <span class="gsap-reveal"
-                ><img src="images/divider.png" alt="divider" width="76"
-              /></span>
-            </div>
-          </div>
-
-          <div class="owl-carousel testimonial-slider" data-aos="fade-up">
-            <div>
-              <div class="testimonial-v1">
-                <div class="testimonial-inner-bg">
-                  <h1>Internship</h1>
-                  <blockquote>
-                    I completed a four-month internship as a Software Developer
-                    Intern at DevAppSys IT Solutions Pvt. Ltd, Mangalore,
-                    Karnataka, from June to September 2024. During this time, I
-                    developed user-friendly interfaces using React.js, built
-                    robust APIs with Golang, and optimized database queries
-                    using SQL. This experience enhanced my skills in full-stack
-                    development and equipped me to create efficient,
-                    high-performance web applications.
-                  </blockquote>
-                </div>
-
-                <div class="testimonial-author-info">
-                  <img src="images/dev-app.jpg" alt="Image" />
-                  <h3>DevAppSys IT Solutions Pvt. Ltd</h3>
-                  <span class="d-block position">Mangalore,Karnataka</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div class="testimonial-v1">
-                <div class="testimonial-inner-bg">
-                  <h1>Internship</h1>
-                  <blockquote>
-                    I completed a four-month internship as a Software Developer
-                    Intern at DevAppSys IT Solutions Pvt. Ltd, Mangalore,
-                    Karnataka, from June to September 2024. During this time, I
-                    developed user-friendly interfaces using React.js, built
-                    robust APIs with Golang, and optimized database queries
-                    using SQL. This experience enhanced my skills in full-stack
-                    development and equipped me to create efficient,
-                    high-performance web applications.
-                  </blockquote>
-                </div>
-
-                <div class="testimonial-author-info">
-                  <img src="images/dev-app.jpg" alt="Image" />
-                  <h3>DevAppSys IT Solutions Pvt. Ltd</h3>
-                  <span class="d-block position">Mangalore,Karnataka</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div class="testimonial-v1">
-                <div class="testimonial-inner-bg">
-                  <h1>Internship</h1>
-                  <blockquote>
-                    I completed a four-month internship as a Software Developer
-                    Intern at DevAppSys IT Solutions Pvt. Ltd, Mangalore,
-                    Karnataka, from June to September 2024. During this time, I
-                    developed user-friendly interfaces using React.js, built
-                    robust APIs with Golang, and optimized database queries
-                    using SQL. This experience enhanced my skills in full-stack
-                    development and equipped me to create efficient,
-                    high-performance web applications.
-                  </blockquote>
-                </div>
-
-                <div class="testimonial-author-info">
-                  <img src="images/dev-app.jpg" alt="Image" />
-                  <h3>DevAppSys IT Solutions Pvt. Ltd</h3>
-                  <span class="d-block position">Mangalore,Karnataka</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- END testimonial -->
-
         <!-- END blog posts -->
 
         <div class="unslate_co--section" id="contact-section">
@@ -767,31 +923,26 @@
                   <a
                     href="https://www.facebook.com/abhishek.delampady.1"
                     target="_blank"
-                    >Facebook</a
-                  >
+                    >Facebook</a>
                 </li>
                 <li>
                   <a
                     href="https://www.linkedin.com/in/abhishek-d-k-723137339/"
                     target="_blank"
-                    >Linkedln</a
-                  >
+                    >Linkedln</a>
                 </li>
 
                 <li>
                   <a href="https://x.com/uchihaXitachi1" target="_blank"
-                    >Twitter</a
-                  >
+                    >Twitter</a>
                 </li>
                 <li>
                   <a href="https://www.instagram.com/_abhi_dk/" target="_blank"
-                    >Instagram</a
-                  >
+                    >Instagram</a>
                 </li>
                 <li>
                   <a href="https://github.com/abhishekdk62" target="_blank"
-                    >GitHub</a
-                  >
+                    >GitHub</a>
                 </li>
               </ul>
             </div>
